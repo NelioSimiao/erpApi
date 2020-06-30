@@ -1,6 +1,7 @@
 package com.erp.api.models;
 
 import java.io.Serializable;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -17,6 +18,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+/**
+ * 
+ * @author nelio
+ *
+ */
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @MappedSuperclass
