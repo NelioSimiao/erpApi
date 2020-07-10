@@ -14,19 +14,20 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "user")
 public class UserEntity extends BaseEntity {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@NotBlank
 	@Size(max = 20)
 	private String username;
 
-	@NotBlank		
+	@NotBlank
 	@Size(max = 50)
 	@Email
 	private String email;
@@ -52,13 +53,16 @@ public class UserEntity extends BaseEntity {
 	private String identificationDocument;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<RoleEntity> roles = new HashSet<>();
+
+	public UserEntity() {
+	}
 
 	public UserEntity(String username, String email, String password) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
-}
+	}
 
 }

@@ -34,6 +34,7 @@ public class BaseEntity  implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false)
+	@EqualsAndHashCode.Include
     private Long id;
  
     @Version

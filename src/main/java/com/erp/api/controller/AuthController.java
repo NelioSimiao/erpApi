@@ -32,9 +32,9 @@ import com.erp.api.repository.UserRepository;
 import com.erp.api.security.jwt.JwtUtils;
 import com.erp.api.service.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("erp/api/auth")
+@RequestMapping("/api/auth/")
 public class AuthController {
 	
 	@Autowired
