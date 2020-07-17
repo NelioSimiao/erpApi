@@ -33,16 +33,11 @@ public class UserEntityTest {
 		Set<RoleEntity> roles = new HashSet<>();
 
 		role.setName(ERole.ROLE_ADMIN);
-		role.setId(1L);
 		roles.add(role);
 		this.user.setId(10L);
 		this.user.setUsername("nmuchisse");
 		this.user.setEmail("nelio@gmail.com");
 		this.user.setPassword("teste");
-		this.user.setName("Nelio Simiao MUchisse");
-		this.user.setCellphone("848407055");
-		this.user.setEmployer("CEDSIF");
-		this.user.setIdentificationDocument("0000000BB");
 		this.user.setRoles(roles);
 
 	}
