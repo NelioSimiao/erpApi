@@ -3,9 +3,10 @@ package com.erp.api.repository;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.erp.api.models.UserEntity;
-
+@Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
 	Optional<UserEntity> findByUsername(String username);

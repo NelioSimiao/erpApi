@@ -32,7 +32,7 @@ import com.erp.api.repository.UserRepository;
 import com.erp.api.security.jwt.JwtUtils;
 import com.erp.api.service.UserDetailsImpl;
 
-//@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/auth/")
 public class AuthController {
@@ -93,13 +93,13 @@ public class AuthController {
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
-				case "admin":
+				case "ROLE_ADMIN":
 					RoleEntity adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
 							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(adminRole);
 
 					break;
-				case "mod":
+				case "ROLE_USER":
 					RoleEntity modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
 							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(modRole);
